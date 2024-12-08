@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
         "start:all": "concurrently \"(npm start --prefix ./apps/document)\" \"(npm start --prefix ./apps/host)\" \"(npm start --prefix ./apps/user)\"",
-        "install:all": "concurrently \"(npm i --prefix ./apps/document)\" \"(npm i --prefix ./apps/host)\" \"(npm i --prefix ./apps/user)\""
+        "install:all": "npm install && concurrently \"(npm i --prefix ./apps/document)\" \"(npm i --prefix ./apps/host)\" \"(npm i --prefix ./apps/user)\""
     },
     "keywords": [],
     "author": "",
