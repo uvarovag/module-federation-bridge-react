@@ -1,4 +1,2 @@
-import { routes } from './routes'
-
+export { RemoteApp } from './RemoteApp'
 export { StandaloneApp } from './StandaloneApp'
-export default routes

@@ -1,11 +1,8 @@
-/* eslint-disable camelcase */
-import { RouteObject } from 'react-router'
+import type { TLoadRemoteComponentProps, TRemoteComponents } from '../types'
 
-import { TLoadRemoteRoutesProps } from '../types'
+const REMOTE_MODULE_NAME = './app'
 
-const REMOTE_MODULE_NAME = './routes'
-
-export const loadRemoteRoutes = async ({ remoteName, remoteUrl }: TLoadRemoteRoutesProps): Promise<RouteObject[]> => {
+export const loadRemote = async ({ remoteName, remoteUrl }: TLoadRemoteComponentProps): Promise<TRemoteComponents> => {
     await new Promise((resolve, reject) => {
         const script = document.createElement('script')
         script.src = remoteUrl
@@ -24,6 +21,6 @@ export const loadRemoteRoutes = async ({ remoteName, remoteUrl }: TLoadRemoteRou
 
     await container.init(__webpack_share_scopes__.default)
     const factory = await container.get(REMOTE_MODULE_NAME)
-    const routesModule = factory()
-    return routesModule.default
+    const module = factory()
+    return module
 }

@@ -1,29 +1,24 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable camelcase */
+import type { TRemoteComponents } from 'pages/RemoteComponent/types'
 
 type TWebpackInitSharing = (scope: string) => Promise<void>
-
-declare const __webpack_init_sharing__: TWebpackInitSharing
 
 type TWebpackShareScopes = {
     [key: string]: unknown
 }
 
-declare const __webpack_share_scopes__: TWebpackShareScopes
-
-type TRemoteContainerGetReturn = {
-    default: RouteObject[]
-}
+type TRemoteContainerGetReturn = TRemoteComponents
 
 type TRemoteContainer = {
     init(shareScope: unknown): Promise<void>
     get(module: string): Promise<() => TRemoteContainerGetReturn>
 }
 
-interface Window {
-    [key: string]: TRemoteContainer
+declare global {
+    interface Window {
+        [key: string]: TRemoteContainer | undefined
+    }
+
+    const __webpack_share_scopes__: TWebpackShareScopes
+    const __webpack_init_sharing__: TWebpackInitSharing
+    const IS_DEV: boolean
 }
-
-declare const window: Window
-
-declare const IS_DEV: boolean

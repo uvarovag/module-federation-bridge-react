@@ -1,0 +1,1 @@
+export { loadRemote } from './loadRemote'
