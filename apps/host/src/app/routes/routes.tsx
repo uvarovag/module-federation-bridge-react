@@ -10,11 +10,11 @@ export const routes: RouteObject[] = [
         children: [
             {
                 path: 'document/*',
-                element: <RemoteComponent remoteName="documentApp" remoteUrl="http://localhost:3001/remoteEntry.js" />,
+                element: <RemoteComponent module="RemoteApp" scope="documentApp" url="http://localhost:3001" />,
             },
             {
                 path: 'user/*',
-                element: <RemoteComponent remoteName="userApp" remoteUrl="http://localhost:3002/remoteEntry.js" />,
+                element: <RemoteComponent module="RemoteApp" scope="userApp" url="http://localhost:3002" />,
             },
         ],
     },

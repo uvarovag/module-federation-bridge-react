@@ -1,20 +1,14 @@
-import type { ComponentType } from 'react'
+import { importRemote } from '@module-federation/utilities'
+import { lazy, Suspense } from 'react'
 
-import { lazy, useEffect, useState } from 'react'
+import type { ImportRemoteOptions } from '@module-federation/utilities'
 
-import { loadRemote } from './utils'
-
-import type { TLoadRemoteComponentProps } from './types'
-
-export const RemoteComponent = (props: TLoadRemoteComponentProps) => {
-    const [RemoteComponent, setRemoteComponent] = useState<ComponentType | undefined>()
-    useEffect(() => {
-        try {
-            setRemoteComponent(lazy(() => loadRemote(props).then((module) => ({ default: module.RemoteApp }))))
-        } catch (error) {
-            console.error(error)
-        }
-    }, [props])
-
-    return RemoteComponent ? <RemoteComponent /> : 'routes loading...'
+export const RemoteComponent = (props: ImportRemoteOptions) => {
+    const Component = lazy(() => importRemote(props))
+    const { url, scope, module } = props
+    return (
+        <Suspense key={`${url}-${scope}-${module}`} fallback="loading...">
+            <Component />
+        </Suspense>
+    )
 }

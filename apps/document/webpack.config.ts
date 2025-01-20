@@ -17,7 +17,7 @@ export default (env: TEnv) =>
                 name: toCamelCase(packageJson.name),
                 filename: 'remoteEntry.js',
                 exposes: {
-                    './app': './src/app',
+                    './RemoteApp': './src/app/RemoteApp',
                 },
                 shared: {
                     ...packageJson.dependencies,
@@ -38,6 +38,9 @@ export default (env: TEnv) =>
         ],
         devServer: {
             open: false,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            },
             proxy: [
                 {
                     secure: false,
