@@ -20,6 +20,7 @@
     "author": "@uvarovag",
     "license": "MIT",
     "dependencies": {
+        "@module-federation/bridge-react": "^0.8.9",
         "@module-federation/utilities": "^3.1.40",
         "@reduxjs/toolkit": "^2.4.0",
         "react": "^18.3.1",

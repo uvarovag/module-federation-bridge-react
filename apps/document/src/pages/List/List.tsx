@@ -10,7 +10,7 @@ export const List = () => {
             <ul>
                 {data?.results.map(({ name }) => (
                     <li key={name}>
-                        <Link to={name}>{name}</Link>
+                        <Link to={`/${name}`}>{name}</Link>
                     </li>
                 ))}
             </ul>

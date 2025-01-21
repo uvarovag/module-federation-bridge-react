@@ -3,10 +3,10 @@ import { Link } from 'react-router'
 export const Navbar = () => (
     <ul>
         <li>
-            <Link to="/user">to user app</Link>
+            <a href="/user">out nav to user app</a>
         </li>
         <li>
-            <Link to="../">main</Link>
+            <Link to="/">main</Link>
         </li>
     </ul>
 )

@@ -1,8 +1,7 @@
-import { useRoutes } from 'react-router'
+import { createBridgeComponent } from '@module-federation/bridge-react'
 
-import { Providers } from './providers'
-import { routes } from './routes'
+import { App } from './App'
 
-export const RemoteApp = () => <Providers>{useRoutes(routes)}</Providers>
-
-export default RemoteApp
+export default createBridgeComponent({
+    rootComponent: App,
+})

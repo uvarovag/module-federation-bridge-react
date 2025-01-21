@@ -1,5 +1,5 @@
 import { Layout } from 'pages/Layout'
-import { RemoteComponent } from 'pages/RemoteComponent'
+import { RemoteComponent } from 'shared'
 
 import type { RouteObject } from 'react-router'
 

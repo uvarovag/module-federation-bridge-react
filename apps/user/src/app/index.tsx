@@ -1,1 +1,1 @@
-export { StandaloneApp } from './StandaloneApp'
+export { App } from './App'

@@ -27,10 +27,10 @@ export default (env: TEnv) =>
                         eager: true,
                         requiredVersion: packageJson.dependencies['react-dom'],
                     },
-                    'react-router': {
-                        eager: true,
-                        requiredVersion: packageJson.dependencies['react-router'],
-                    },
+                    // 'react-router': {
+                    //     eager: true,
+                    //     requiredVersion: packageJson.dependencies['react-router'],
+                    // },
                 },
             }),
         ],
