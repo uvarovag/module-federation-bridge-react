@@ -8,11 +8,11 @@
 ## Installation
 
 ```bash
-npm run install:all
+npm run install
 ```
 
 ## Start
 
 ```bash
-npm run start:all
+npm run start
 ```
