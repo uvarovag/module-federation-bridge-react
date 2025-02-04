@@ -10,11 +10,11 @@ const Error = () => <span>error!!!</span>
 const Loading = () => <span>loading...</span>
 
 export const RemoteComponent = (props: ImportRemoteOptions) => {
-    const Component = createRemoteComponent({
+    const Component = createRemoteComponent<ComponentType, 'propTypes' | 'displayName'>({
         loader: () => importRemote(props),
         fallback: Error,
         loading: <Loading />,
-    }) as unknown as ComponentType
+    })
     return <Component />
 }
 
