@@ -1,7 +1,8 @@
-# React Module Federation Dynamic Module Import
+# Module Federation & React Bridge
 
 ## Features
 
+- @module-federation/bridge-react
 - Host app
 - Remote apps
 
