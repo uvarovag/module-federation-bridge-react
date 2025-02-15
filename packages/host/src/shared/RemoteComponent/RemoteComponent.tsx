@@ -2,7 +2,6 @@ import type { ComponentType } from 'react'
 
 import { createRemoteComponent } from '@module-federation/bridge-react'
 import { importRemote } from '@module-federation/utilities'
-// import { Suspense } from 'react'
 
 import type { ImportRemoteOptions } from '@module-federation/utilities'
 
@@ -17,13 +16,3 @@ export const RemoteComponent = (props: ImportRemoteOptions) => {
     })
     return <Component />
 }
-
-// export const RemoteComponent = (props: ImportRemoteOptions) => {
-//     const Component = lazy(() => importRemote(props))
-//     const { url, scope, module } = props
-//     return (
-//         <Suspense key={`${url}-${scope}-${module}`} fallback="loading...">
-//             <Component />
-//         </Suspense>
-//     )
-// }

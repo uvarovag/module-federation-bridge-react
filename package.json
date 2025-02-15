@@ -1,5 +1,5 @@
 {
-    "name": "monorepo-test",
+    "name": "playground-module-federation-bridge-react",
     "version": "1.0.0",
     "private": true,
     "workspaces": [
