@@ -3,16 +3,16 @@
 ## Features
 
 - Host app
-- Remote app
+- Remote apps
 
 ## Installation
 
 ```bash
-npm run install
+npm i
 ```
 
 ## Start
 
 ```bash
-npm run start
+npm start
 ```

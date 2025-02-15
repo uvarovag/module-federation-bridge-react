@@ -6,7 +6,9 @@
         "packages/*"
     ],
     "scripts": {
-        "start": "concurrently \"(npm start --workspace=document-app)\" \"(npm start --workspace=host-app)\" \"(npm start --workspace=user-app)\""
+        "start": "concurrently \"(npm start --workspace=remote-document)\" \"(npm start --workspace=host)\" \"(npm start --workspace=remote-user)\"",
+        "build": "concurrently \"(npm run build --workspace=remote-document)\" \"(npm run build --workspace=host)\" \"(npm run build --workspace=remote-user)\"",
+        "lint:fix": "concurrently \"(npm run lint:fix --workspace=remote-document)\" \"(npm run lint:fix --workspace=host)\" \"(npm run lint:fix --workspace=remote-user)\""
     },
     "keywords": [],
     "author": "@uvarovag",
@@ -25,11 +27,11 @@
         "@types/react": "^19.0.5",
         "@types/react-dom": "^19.0.3",
         "@types/react-router": "^5.1.20",
-        "@uvarovag/eslint-config-feature-sliced-flat": "^1.0.9",
-        "@uvarovag/eslint-config-ts-react": "^2.0.16",
+        "@uvarovag/eslint-config-feature-sliced-flat": "^1.0.10",
+        "@uvarovag/eslint-config-ts-react": "^2.2.0",
         "@uvarovag/prettier-config": "^1.0.6",
         "@uvarovag/to-camel-case": "^1.0.15",
-        "@uvarovag/tsconfig-react": "^1.0.5",
+        "@uvarovag/tsconfig-react": "^1.2.1",
         "@uvarovag/webpack-config-ts-react": "^1.2.2",
         "concurrently": "^9.1.2",
         "eslint": "^9.18.0",
