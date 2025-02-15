@@ -1,4 +1,4 @@
-# Module Federation & React Bridge
+# Module Federation & Bridge React
 
 ## Features
 
